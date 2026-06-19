@@ -180,7 +180,7 @@ public class ResourceValidator {
     private static boolean checkResourceExists(ResourceLocation location) {
         try {
             ResourceManager resourceManager = Minecraft.getInstance().getResourceManager();
-            return resourceManager.hasResource(location);
+            return resourceManager.getResource(location).isPresent();
         } catch (Exception e) {
             return false;
         }
